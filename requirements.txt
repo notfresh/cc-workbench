@@ -1,0 +1,10 @@
+flask>=3.0
+markdown>=3.5
+pygments>=2.16
+
+# 语义搜索预留(MVP 不启用,接口已留位)
+# 安装走 service/ 那种方式:torch 先装 CPU 版,再装 sentence-transformers + pymilvus
+# 索引期启动用 nice -n 10 控制 CPU(参考 github-repo-crawler/service/SKILL.md 负载铁律)
+torch --index-url https://download.pytorch.org/whl/cpu
+sentence-transformers>=2.2
+pymilvus>=2.4

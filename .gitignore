@@ -1,0 +1,27 @@
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# --- Data: SQLite + 抓取快照 + 向量库(都本地,不进 git) ---
+data/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+.vector/
+
+# --- 编辑器/系统 ---
+.idea/
+.vscode/
+.DS_Store
+*.swp
+*.swo
+
+# --- 临时/测试 ---
+*.log
+tmp/
+scratch/
