@@ -1,6 +1,8 @@
-# AGENTS.md — recruiter-screener 项目铁律
+# AGENTS.md — career connection workbench (cc-workbench) 项目铁律
 
 > 单兵猎头用的 JD 库 + 候选人库 + 双向字面匹配工具。MVP 第一期,语义搜索接口预留。
+>
+> 本机目录 `/root/projects/recruiter-screener`,GitHub 仓 `notfresh/cc-workbench`,项目显示名 career connection workbench。
 
 ## ⚠️ 已知风险(2026-10-17 立)
 

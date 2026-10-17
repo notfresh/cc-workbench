@@ -1,6 +1,8 @@
-# recruiter-screener · MVP 方案文档
+# career connection workbench (cc-workbench) · MVP 方案文档
 
-> 状态:草案 v0.1(2026-10-17)· 待用户拍板后再开工写代码
+> 状态:v1.0 已发布(2026-10-17)· 阶段 0-4 完成,阶段 5 语义搜索待启
+>
+> 本机目录 `recruiter-screener/`,GitHub 仓 `notfresh/cc-workbench`,项目显示名 career connection workbench。
 
 ---
 

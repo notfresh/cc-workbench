@@ -1,6 +1,8 @@
-# recruiter-screener
+# career connection workbench
 
-单兵猎头用的本地 CRM:**数据 + 算法**包。被 task101-portal 挂载在 9616 的 `/t/hire` 下使用。
+> 单兵猎头用的本地 CRM:**数据 + 算法**包。挂载在 task101-portal 9616 的 `/t/hire` 下使用。
+>
+> 简称 **cc-workbench**(本机目录仍叫 `recruiter-screener`,仓地址 `github.com/notfresh/cc-workbench`)。
 
 **本仓库只提供**:
 - `schema.sql` — SQLite 单一来源(jds / candidates / imports)
@@ -32,9 +34,9 @@
 ## 阶段进度
 
 - ✅ 阶段 0 立项 + 阶段 1 脚手架(库能跑能筛)
-- ⏳ 阶段 2 JD 录入表单 + 候选人录入表单
-- ⏳ 阶段 3 候选人库 CRUD 完整化
-- ⏳ 阶段 4 双向匹配 RULES 实装(compute_match_score)
+- ✅ 阶段 2 JD 录入表单 + 候选人录入表单
+- ✅ 阶段 3 候选人库 CRUD 完整化
+- ✅ 阶段 4 双向匹配 RULES 实装(compute_match_score)
 - ⏳ 阶段 5 语义搜索(bge-small-zh + milvus-lite)
 
-详细方案:见 [`docs/PLAN.md`](docs/PLAN.md)。
+详细方案:见 [`docs/PLAN.md`](docs/PLAN.md)。版本:见 git tag `v1.0`。
