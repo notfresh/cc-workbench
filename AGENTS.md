@@ -16,6 +16,10 @@
 | **录入时间用本地时区** | 阶段 1 写 | `datetime.now().isoformat()` 写 created_at/updated_at,无 UTC 标记 | 单机本地用,无歧义。跨时区需 `datetime.now(timezone.utc).isoformat()` |
 | **SQL 拼接用 f-string** | 阶段 1 写 | `WHERE title LIKE ?` 走参数化,但 `state='active'` 这种合法值仍用 f-string | 当前只有 4 个固定 state 枚举,值已在 schema 注释中标,**不要加 user-supplied 字符串进 f-string** |
 | **同源多任务读写** | 阶段 1 写 | 9616 跑着,用户又开 IDE 直接 sqlite3 改库 → 写锁冲突 | 用户自拍:要么 IDE 只读,要么先关 9616 |
+| **候选人电话/邮箱无格式校验** | 阶段 3 写 | `/t/hire/import/cand` 直接 `form.get()` 写库,不验 `phone=11位数字` / `email=*@*.*` | MVP 暂不挡;猎头手输错可重录。前端 maxlength + 后端正则留阶段 6+ |
+| **tags 技能匹配只判有无交集** | 阶段 4 写 | `_rule_skill_overlap` 只要 c_tags ∩ j_tags 非空就满分 30,不看 Jaccard 比例 | 当前可用,候选人 1 个技能命中 = 满分 30(可能过松)。阶段 5+ 改成"命中比例 × 30" |
+| **全空匹配 = 100 分(语义模糊)** | 阶段 4 写 | JD 全不限 + 候选人啥都没填 → 5 条规则全 pass → 100 分 | 字面定义"通过"是对的(没卡 = 通过),但语义上"无信号 ≠ 高分"。阶段 5+ 改成"无信号规则 0 分"或加 weight=0 |
+| **候选人录入 candidates 表未加 UNIQUE 约束** | 阶段 3 写 | 同名同手机可重复录入,无去重 | MVP 暂不挡(猎头可能记多个"张三")。阶段 6+ 可加 UNIQUE(phone) WHERE phone != '' |
 
 ## 项目定位
 - **不是** github-issue-service 的 1:1 复制(数据源/增量/向量库都不同)
