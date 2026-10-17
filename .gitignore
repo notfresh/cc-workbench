@@ -7,7 +7,8 @@ venv/
 *.egg-info/
 
 # --- Data: SQLite + 抓取快照 + 向量库(都本地,不进 git) ---
-data/
+data/*
+!data/.gitkeep
 *.db
 *.db-journal
 *.db-wal
